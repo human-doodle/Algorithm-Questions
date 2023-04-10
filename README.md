@@ -6,3 +6,8 @@
 
 
 TODO: Update readme
+
+
+Graph : 
+1. numIslands.py
+2. removeStones.py
