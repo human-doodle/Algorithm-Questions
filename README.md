@@ -11,4 +11,5 @@ TODO: Update readme
 Graph : 
 1. numIslands.py
 2. removeStones.py
-3. dijkstras_algorithm
+3. dijkstras_algorithm.py
+4. findCheapestPrice.py
