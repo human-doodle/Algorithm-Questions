@@ -14,3 +14,6 @@ Graph :
 3. dijkstras_algorithm.py
 4. findCheapestPrice.py
 5. number_of_moves.py
+
+Hashing:
+1. substring_hashing.py
