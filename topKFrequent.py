@@ -28,6 +28,8 @@ Constraints:
 words[i] consists of lowercase English letters.
 k is in the range [1, The number of unique words[i]]
  
+SOME OBSERVATION:
+heapq heappush by default implements min-heap. So inorder to implement maxheap, The easiest way is to invert the value of the keys and use heapq. For example, turn 1000.0 into -1000.0 and 5.0 into -5.0.
 
 '''
 
