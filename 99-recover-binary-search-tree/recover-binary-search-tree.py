@@ -18,8 +18,7 @@ class Solution:
                 curr = curr.left
             curr = stack.pop()
             
-            if prev:
-                if curr.val < prev.val:
+            if prev and curr.val < prev.val:
                     if not first:
                         first = prev
                         middle = curr
