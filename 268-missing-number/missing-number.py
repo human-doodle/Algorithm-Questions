@@ -1,6 +1,6 @@
 class Solution:
     def missingNumber(self, nums: List[int]) -> int:
-        # O(3n) -> O(n)
+        # O(3n) -> O(n) SC: O(n)
         d = {}
         for i in range(len(nums)+1):
             d[i] = 0
@@ -9,6 +9,12 @@ class Solution:
         for k in d:
             if d[k] == 0:
                 return k
+
+        # TC O(n) SC(1) : problem can overflow since we are adding
+        n = len(nums)
+        sum = n * (n+1)/2
+        sum_nums = sum(nums)
+        return sum - sum_nums
 
 
         
