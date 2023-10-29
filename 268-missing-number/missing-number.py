@@ -12,9 +12,16 @@ class Solution:
 
         # TC O(n) SC(1) : problem can overflow since we are adding
         n = len(nums)
-        sum = n * (n+1)/2
-        sum_nums = sum(nums)
-        return sum - sum_nums
+        # sum = n * (n+1)/2
+        # sum_nums = sum(nums)
+        # return sum - sum_nums
+
+        # O(n) O(1) : XOR bit manipulation
+        res = 0
+        for i in nums:
+            res^=i
+        return res
+
 
 
         
