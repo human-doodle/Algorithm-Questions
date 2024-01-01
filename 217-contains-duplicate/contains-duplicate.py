@@ -8,10 +8,22 @@ class Solution:
         #     else:
         #         d.append(n)
         # return False
-        d = dict()
+
+        # this was successul - > hashset/dictionary is always better than array.
+        # d = dict()
+        # for n in nums:
+        #     if n in d:
+        #         return True
+        #     else:
+        #         d[n] = 1
+        # return False
+
+        # can also do using set
+        d = set()
         for n in nums:
             if n in d:
                 return True
             else:
-                d[n] = 1
+                d.add(n)
         return False
+
