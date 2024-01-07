@@ -1,0 +1,3 @@
+Leetcode problem: 287. Find the Duplicate Number. Refer:https://www.youtube.com/watch?v=wjYnzkAhcNk
+1. Imagine it as a linked list problem
+2. Floyd's Algorithm : Floyd’s cycle detection algorithm is a pointer algorithm that uses only two pointers, moving through the sequence at different speeds. The article states the usage of this algorithm in Linked List and its output.The purpose is to determine whether the linked list has a cycle or not. First, you keep two pointers of the head node. At each iteration, you move one of the pointers by two steps and the other one by one step Refer: https://www.codingninjas.com/studio/library/floyds-cycle-finding-algorithm
