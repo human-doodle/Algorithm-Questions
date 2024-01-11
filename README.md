@@ -20,3 +20,6 @@ Hashing:
 
 Prefix Sum:
 https://www.hackerrank.com/challenges/crush/problem?isFullScreen=true&h_l=interview&playlist_slugs%5B%5D=interview-preparation-kit&playlist_slugs%5B%5D=arrays
+
+
+Dynamic Programming: https://leetcode.com/discuss/general-discussion/458695/Dynamic-Programming-Patterns
