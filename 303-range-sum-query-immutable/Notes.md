@@ -1,0 +1,1 @@
+<h2>range-sum-query-immutable Notes</h2><hr>It's easy to 
