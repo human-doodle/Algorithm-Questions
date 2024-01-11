@@ -1,1 +1,1 @@
-<h2>range-sum-query-immutable Notes</h2><hr>It's easy to 
+<h2>range-sum-query-immutable Notes</h2><hr>It's easy to do the normal way, but this is 
