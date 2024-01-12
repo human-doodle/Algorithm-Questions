@@ -10,12 +10,9 @@ class Solution:
         for c in s[:l]:
             if value:=checkVowel(c):
                 a+=1
-                print(a)
         for c in s[l:len(s)]:
             if value:=checkVowel(c):
                 b+=1
-                print(b)
-        if a==b:
-            return True
-        return False
+        return (ans:=(a==b))
+            
         
