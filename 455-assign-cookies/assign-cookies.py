@@ -1,8 +1,8 @@
 class Solution:
     def findContentChildren(self, g: List[int], s: List[int]) -> int:
         res = 0
-        s = sorted(s)
-        g = sorted(g)
+        s.sort()
+        g.sort()
         for i in range(len(g)):
             for j in range(len(s)):
                if g[i]<=s[j]:
