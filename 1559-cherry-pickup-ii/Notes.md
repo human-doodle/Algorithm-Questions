@@ -1,1 +1,1 @@
-<h2>cherry-pickup-ii Notes</h2><hr>NAHI SAMAJH AYA, REVII
+<h2>cherry-pickup-ii Notes</h2><hr>NAHI SAMAJH AYA, REVI
