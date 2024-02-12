@@ -3,18 +3,20 @@ class Solution:
         """
         Do not return anything, modify matrix in-place instead.
         """
-        # transpose and reverse each row
-
-        n = len(matrix)
+        
+        # transpose and reverse
 
         # transpose
-        for i in range(0, n-1):
-            for j in range(i+1, n):
-                matrix[i][j], matrix[j][i] = matrix[j][i], matrix[i][j]
-       
+        n = len(matrix)
+        m = len(matrix[0])
 
+        for i in range(n):
+            for j in range(i,m):
+                matrix[i][j], matrix[j][i] = matrix[j][i], matrix[i][j]
+        
         # reverse
-        for i in range(0, n):
-            matrix[i].reverse()
-        
-        
+        for i in range(n):
+            for j in range(m//2):
+                matrix[i][j], matrix[i][m-j-1] = matrix[i][m-j-1], matrix[i][j]
+
+# O(n^2); O(1)
