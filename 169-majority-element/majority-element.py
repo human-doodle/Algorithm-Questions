@@ -6,4 +6,5 @@ class Solution:
             d[num] = d.get(num, 0) + 1
             if d[num] > n/2:
                 return num
+    # O(n) O(n)
                     
