@@ -1,13 +1,10 @@
 class Solution:
     def firstPalindrome(self, words: List[str]) -> str:
         def isPalindrome(s: string) -> bool:
-            l, r = 0, len(s)-1
-            while l<r:
-                if s[l]!=s[r] :
-                    return False
-                l+=1
-                r-=1
-            return True
+            if s[:] == s[::-1]:
+                return True
+            else:
+                return False
         
         for word in words:
             if isPalindrome(word):
