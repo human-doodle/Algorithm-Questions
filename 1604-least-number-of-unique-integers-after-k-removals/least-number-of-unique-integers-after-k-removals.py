@@ -18,11 +18,13 @@ class Solution:
             idx+=1
         
         res= 0
+        
         for i in d:
             if i !=0:
                 res+=1
 
         return res
 
+# O(nlogn); O(n)
 
             
