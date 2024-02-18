@@ -4,7 +4,7 @@ class Solution:
         M = len(matrix)
         N = len(matrix[0])
 
-        # optimal solution
+        # optimal solution O(log(N+M)); O(1)
         def bs(matrix, target, M, N):
             n = M*N
             low, high = 0, n-1
