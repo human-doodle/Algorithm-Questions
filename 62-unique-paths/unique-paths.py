@@ -6,9 +6,9 @@ class Solution:
             if dp[i][j]!=-1: return dp[i][j]
             else: 
                 dp[i][j] = countPaths(dp, i+1, j, m, n) + countPaths(dp, i, j+1, m, n)
-                print(dp[i][j])
-                return dp[i][j] 
+                return dp[i][j]
         dp = [[-1 for _ in range(m)] for _ in range(n)]
-        print(dp)
         return countPaths(dp, 0, 0, m, n)
+
+    # O(n*n) O(n*n)
         
