@@ -7,8 +7,14 @@ class Solution(object):
         """
         for i, num in enumerate(nums):
             n = target - num
-            for j, num2 in enumerate(nums):
-                if n == num2 and i!=j:
+            if n in nums:
+                j = nums.index(n)
+                if j!=i:
                     return [i,j]
+        # for i, num in enumerate(nums):
+        #     n = target - num
+        #     for j, num2 in enumerate(nums):
+        #         if n == num2 and i!=j:
+        #             return [i,j]
         
         
