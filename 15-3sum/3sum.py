@@ -7,7 +7,7 @@ class Solution(object):
         """
         res = set()
 
-        # sort first and two pointers
+        # sort first and two pointers O(n^2)+O(nlogn); O(1)
         nums.sort()
         for i in range(len(nums)):
             if i!=0 and nums[i] == nums[i-1]:
