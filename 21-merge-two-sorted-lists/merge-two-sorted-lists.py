@@ -25,6 +25,8 @@ class Solution:
         
 
 '''
+O(m+n) TC
+O(1) SC
 newlist = ListNode(0)
 curr = newList
 if i<=j
