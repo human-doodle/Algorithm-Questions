@@ -1,7 +1,6 @@
 class Solution:
     def largestLocal(self, grid: List[List[int]]) -> List[List[int]]:
-        rows = len(grid)-2
-        cols = len(grid[0])-2
+        rows, cols = len(grid)-2, len(grid[0])-2
 
         res = [[-1 for _ in range(rows)] for _ in range(cols)]
 
