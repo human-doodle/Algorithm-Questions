@@ -5,29 +5,45 @@
 #         self.left = left
 #         self.right = right
 class Solution:
-    def postorderTraversal(self, root: Optional[TreeNode]) -> List[int]:
+    # def postorderTraversal(self, root: Optional[TreeNode]) -> List[int]:
 
-        # iterative
+    #     # iterative
 
-        if not root:
-            return []
+    #     if not root:
+    #         return []
 
-        stack = [(root, False)] # boolean to identify if the perticular node has been visited yet
-        res = []
+    #     stack = [(root, False)] # boolean to identify if the perticular node has been visited yet
+    #     res = []
 
-        while stack:
-            curr, visited = stack.pop()
+    #     while stack:
+    #         curr, visited = stack.pop()
 
-            if visited:
-                res.append(curr.val)
-            else:
-                stack.append((curr, True))
+    #         if visited:
+    #             res.append(curr.val)
+    #         else:
+    #             stack.append((curr, True))
 
-                if curr.right:
-                    stack.append((curr.right, False))
-                if curr.left:
-                    stack.append((curr.left, False))
+    #             if curr.right:
+    #                 stack.append((curr.right, False))
+    #             if curr.left:
+    #                 stack.append((curr.left, False))
         
+    #     return res
+
+
+    # recursive
+    def postorder(self, node, res):
+        if not node:
+            return 
+        self.postorder(node.left, res)
+        self.postorder(node.right, res)
+        res.append(node.val)
+        
+
+    def postorderTraversal(self, root: Optional[TreeNode]) -> List[int]:
+        res = []
+        self.postorder(root, res)
+
         return res
 
             
