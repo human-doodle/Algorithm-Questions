@@ -12,35 +12,26 @@ class Solution:
 
         q = collections.deque()
         q.append((root, 0))
-        lastLevel = 0
-        curr_level = []
-        res = []
+
+        d = dict()
 
         while q:
             curr, level = q.popleft()
             # print(curr.val, level)
-            if level!=lastLevel:
-                if (lastLevel)%2 == 0:
-                    res.append(curr_level)
-                else:
-                    res.append(curr_level[::-1])
-                lastLevel += 1
-                curr_level = [curr.val]
-            else:
-                curr_level.append(curr.val)
-
+            d[level] = d.get(level, [])
+            d[level].append(curr.val)
             if curr.left:
                     q.append((curr.left, level+1))
             if curr.right:
                     q.append((curr.right, level+1))
             
-        if not q and curr_level:
-            if (lastLevel)%2 == 0:
-                    res.append(curr_level)
+        res = []
+        for key, value in d.items():
+            if key%2 == 0:
+                res.append(value)
             else:
-                    res.append(curr_level[::-1])
+                res.append(value[::-1])
 
-        print(curr_level)     
         return res
 
 '''
