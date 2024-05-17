@@ -1,5 +1,8 @@
 class Solution:
     def evaluateTree(self, root: Optional[TreeNode]) -> bool:
+
+        # iterative
+        
         stack = [(root, 0)]
         postorder = []
         
