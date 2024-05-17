@@ -8,22 +8,22 @@ class Solution:
     def minDepth(self, root: Optional[TreeNode]) -> int:
 
         # bfs; level order traversal
-        minLevel = float('inf') # root at 1
         if not root:
             return 0
         q = deque()
-        q.append((root, 1))
+        q.append((root, 1)) # root at level 1
         while q:
                 node, level = q.popleft()
+
+                if not node.left and not node.right:
+                    return level
+
                 if node.left:
                     q.append((node.left, level+1))
                 if node.right:
                     q.append((node.right, level+1))
-                if not node.left and not node.right:
-                    # leaf node
-                    minLevel = min(minLevel, level)
+                
 
-        return minLevel
 
                 
             
