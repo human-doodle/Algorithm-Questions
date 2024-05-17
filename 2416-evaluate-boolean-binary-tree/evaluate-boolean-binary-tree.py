@@ -1,28 +1,29 @@
-# Definition for a binary tree node.
-# class TreeNode:
-#     def __init__(self, val=0, left=None, right=None):
-#         self.val = val
-#         self.left = left
-#         self.right = right
-class Solution:  
-    def postorder(self,node):
-        if node.val == 0 or node.val == 1:
-            return node.val 
-        if node.val == 2:
-            return self.postorder(node.left) or self.postorder(node.right)
-        elif node.val == 3:
-            return self.postorder(node.left) and self.postorder(node.right)
-        return False
-        
+class Solution:
     def evaluateTree(self, root: Optional[TreeNode]) -> bool:
-        return self.postorder(root)
-
-
-'''
-Input: root = [2,1,3,null,null,0,1]
-Output: true
-
-T, F, T, AND, OR
-
-
-'''
+        stack = [(root, 0)]
+        postorder = []
+        
+        while stack:
+            curr, visited = stack.pop()
+            if curr:
+                if visited:
+                    if curr.val == 0 or curr.val == 1:
+                        postorder.append(curr.val == 1)
+                    else:
+                        if curr.val == 2:
+                            left = postorder.pop()
+                            right = postorder.pop()
+                            value = left or right
+                            postorder.append(value)
+                        elif curr.val == 3:
+                            left = postorder.pop()
+                            right = postorder.pop()
+                            value = left and right
+                            postorder.append(value)
+                else:
+                    stack.append((curr, 1))
+                    stack.append((curr.right, 0))
+                    stack.append((curr.left, 0))
+            
+        
+        return postorder[0]
