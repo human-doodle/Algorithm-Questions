@@ -1,6 +1,6 @@
 class Solution:
     def specialArray(self, nums: List[int]) -> int:
-        nums.sort()
+        # O(n^2); O(1)
         for i in range(len(nums)+1):
             count = 0
             for num in  nums:
