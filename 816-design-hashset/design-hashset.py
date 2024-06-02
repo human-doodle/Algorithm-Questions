@@ -1,20 +1,40 @@
+class ListNode:
+    def __init__(self,key=-1,next=None):
+        self.key = key
+        self.next = next
+
 class MyHashSet:
 
     def __init__(self):
-        self.res = [False]*(10 ** 6 + 1)
+        self.map = [ListNode() for i in range(1000)]
+    
+    def hashkey(self,num):
+        return num%1000
 
     def add(self, key: int) -> None:
-        self.res[key] = True
+        currNode = self.map[self.hashkey(key)]
+        while currNode.next:
+            if currNode.next.key == key:
+                return
+            else:
+                currNode = currNode.next
+        currNode.next = ListNode(key)
 
     def remove(self, key: int) -> None:
-        self.res[key] = False
-        
+        currNode = self.map[self.hashkey(key)]
+        while currNode and currNode.next:
+            if currNode.next.key == key:
+                currNode.next = currNode.next.next
+                return
+            currNode = currNode.next
 
     def contains(self, key: int) -> bool:
-        if self.res[key] == True:
-            return True
-        else:
-            return False
+        currNode = self.map[self.hashkey(key)].next
+        while currNode:
+            if currNode.key == key:
+                return True
+            currNode = currNode.next
+        return False
 
 
 # Your MyHashSet object will be instantiated and called as such:
