@@ -1,44 +1,51 @@
 class ListNode:
-    def __init__(self,key=-1,next=None):
-        self.key = key
+    def __init__(self, val=0, next=None):
+        self.val = val
         self.next = next
 
 class MyHashSet:
-
     def __init__(self):
-        self.map = [ListNode() for i in range(1000)]
-    
-    def hashkey(self,num):
-        return num%1000
+        # number of buckets
+        self.bucket_size = 1000
+        # array of buckets with dummy nodes
+        self.buckets = [ListNode() for _ in range(self.bucket_size)]
 
     def add(self, key: int) -> None:
-        currNode = self.map[self.hashkey(key)]
-        while currNode.next:
-            if currNode.next.key == key:
+        # compute hash code
+        bucket_index = key % self.bucket_size
+        # find the last node in the linked list
+        prev = self.buckets[bucket_index]
+        curr = prev.next
+        while curr:
+            if curr.val == key:
+                # key already exists
                 return
-            else:
-                currNode = currNode.next
-        currNode.next = ListNode(key)
+            prev, curr = curr, curr.next
+        # key doesn't exist, add a new node
+        prev.next = ListNode(key)
 
     def remove(self, key: int) -> None:
-        currNode = self.map[self.hashkey(key)]
-        while currNode and currNode.next:
-            if currNode.next.key == key:
-                currNode.next = currNode.next.next
+        # compute hash code
+        bucket_index = key % self.bucket_size
+        # find the node to remove
+        prev = self.buckets[bucket_index]
+        curr = prev.next
+        while curr:
+            if curr.val == key:
+                # remove the node
+                prev.next = curr.next
                 return
-            currNode = currNode.next
+            prev, curr = curr, curr.next
 
     def contains(self, key: int) -> bool:
-        currNode = self.map[self.hashkey(key)].next
-        while currNode:
-            if currNode.key == key:
+        # compute hash code
+        bucket_index = key % self.bucket_size
+        # find the node
+        curr = self.buckets[bucket_index].next
+        while curr:
+            if curr.val == key:
+                # key found
                 return True
-            currNode = currNode.next
+            curr = curr.next
+        # key not found
         return False
-
-
-# Your MyHashSet object will be instantiated and called as such:
-# obj = MyHashSet()
-# obj.add(key)
-# obj.remove(key)
-# param_3 = obj.contains(key)
