@@ -15,22 +15,3 @@ class Solution:
 
         return False
             
-            
-        # subarray startign at index i+1 and ending at j : prefix[j] - prefix[i]
-        '''
-        1, 2, 3
-        ^.    ^
-        1, 3, 6
-        0, 1, 3
-         prefix[j] - prefix[i] % k == 0
-        prefix[j]%k == prefix[i] % k
-
-        '''
-        # # O(n^3) brute force TLE
-        # for i in range(len(nums)):
-        #     for j in range(i+1, len(nums)):
-        #         _sum = sum(nums[i:j+1])
-        #         if _sum%k == 0:
-        #             return True
-        # return False
-        
