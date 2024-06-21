@@ -9,8 +9,6 @@ class Solution:
         def _flip_tree(root):
             if not root:
                 return 
-            if not root.right and not root.left:
-                root.right, root.left = root.left, root.right
             root.right, root.left = root.left, root.right
             _flip_tree(root.left)
             _flip_tree(root.right)
