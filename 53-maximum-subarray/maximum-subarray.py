@@ -1,6 +1,7 @@
 class Solution:
     def maxSubArray(self, nums: List[int]) -> int:
 
+        # KADANE'S ALGORITHM O(n) ; O(1)
         maxsum = -float('inf')
         curr_sum = 0
 
