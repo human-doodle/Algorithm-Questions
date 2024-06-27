@@ -3,6 +3,8 @@ class Solution:
         res = 0
         s.sort()
         g.sort()
+        i, j = 0, 0
+    
         for i in range(len(g)):
             for j in range(len(s)):
                if g[i]<=s[j]:
